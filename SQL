@@ -1,0 +1,63 @@
+**1. Creating a Users Table:**
+
+```sql
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Email VARCHAR(100) UNIQUE,
+    Age INT
+);
+```
+
+This SQL code creates a table named "Users" with columns for UserID, FirstName, LastName, Email, and Age.
+
+**2. Inserting Data:**
+
+```sql
+-- Insert a new user
+INSERT INTO Users (UserID, FirstName, LastName, Email, Age)
+VALUES (1, 'John', 'Doe', 'john@example.com', 30);
+
+-- Insert another user
+INSERT INTO Users (UserID, FirstName, LastName, Email, Age)
+VALUES (2, 'Jane', 'Smith', 'jane@example.com', 28);
+```
+
+This SQL code inserts two new users into the "Users" table.
+
+**3. Querying Data:**
+
+```sql
+-- Retrieve all users
+SELECT * FROM Users;
+
+-- Retrieve users with an age greater than 25
+SELECT * FROM Users WHERE Age > 25;
+
+-- Retrieve users with a specific email
+SELECT * FROM Users WHERE Email = 'CP80016@GMAIL.com';
+```
+
+These SQL queries retrieve data from the "Users" table based on different criteria.
+
+**4. Updating Data:**
+
+```sql
+-- Update John Doe's age
+UPDATE Users
+SET Age = 31
+WHERE UserID = 1;
+```
+
+This SQL code updates John Doe's age to 31 in the "Users" table.
+
+**5. Deleting Data:**
+
+```sql
+-- Delete Jane Smith from the table
+DELETE FROM Users
+WHERE UserID = 2;
+```
+
+This SQL code deletes Jane Smith's record from the "Users" table.
