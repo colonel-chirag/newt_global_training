@@ -1,0 +1,87 @@
+
+**1. Creating a Table:**
+
+```sql
+CREATE TABLE Employees (
+    EmployeeID NUMBER PRIMARY KEY,
+    FirstName VARCHAR2(50),
+    LastName VARCHAR2(50),
+    Email VARCHAR2(100) UNIQUE,
+    HireDate DATE
+);
+```
+
+This SQL code creates a table named "Employees" with columns for EmployeeID, FirstName, LastName, Email, and HireDate.
+
+**2. Inserting Data:**
+
+```sql
+-- Insert a new employee
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Email, HireDate)
+VALUES (1, 'John', 'Doe', 'john@example.com', TO_DATE('2023-01-15', 'YYYY-MM-DD'));
+
+-- Insert another employee
+INSERT INTO Employees (EmployeeID, FirstName, LastName, Email, HireDate)
+VALUES (2, 'Jane', 'Smith', 'jane@example.com', TO_DATE('2022-12-10', 'YYYY-MM-DD'));
+```
+
+This SQL code inserts two new employees into the "Employees" table.
+
+**3. Querying Data:**
+
+```sql
+-- Retrieve all employees
+SELECT * FROM Employees;
+
+-- Retrieve employees hired after a certain date
+SELECT * FROM Employees WHERE HireDate > TO_DATE('2023-01-01', 'YYYY-MM-DD');
+
+-- Retrieve employees with a specific email
+SELECT * FROM Employees WHERE Email = 'john@example.com';
+```
+
+These SQL queries retrieve data from the "Employees" table based on different criteria.
+
+**4. Updating Data:**
+
+```sql
+-- Update John Doe's hire date
+UPDATE Employees
+SET HireDate = TO_DATE('2023-02-01', 'YYYY-MM-DD')
+WHERE EmployeeID = 1;
+```
+
+This SQL code updates John Doe's hire date in the "Employees" table.
+
+**5. Deleting Data:**
+
+```sql
+-- Delete Jane Smith from the table
+DELETE FROM Employees
+WHERE EmployeeID = 2;
+```
+
+This SQL code deletes Jane Smith's record from the "Employees" table.
+
+**6. Aggregation and Grouping:**
+
+```sql
+-- Calculate the average age of employees
+SELECT AVG(EXTRACT(YEAR FROM sysdate) - EXTRACT(YEAR FROM HireDate)) AS AverageAge
+FROM Employees;
+```
+
+This SQL query calculates the average age of employees based on their hire dates.
+
+**7. Joins:**
+
+```sql
+-- Retrieve employees and their associated departments using an INNER JOIN
+SELECT Employees.FirstName, Employees.LastName, Departments.DepartmentName
+FROM Employees
+INNER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+```
+
+This SQL query performs an INNER JOIN to retrieve employees and their associated departments.
+
+Oracle SQL also supports advanced features like subqueries, views, stored procedures, and triggers, among others. Keep in mind that Oracle SQL syntax may have slight differences from other SQL database systems, so it's essential to refer to the Oracle documentation for specific details and features.
