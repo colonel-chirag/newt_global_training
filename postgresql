@@ -1,0 +1,60 @@
+Connecting to PostgreSQL
+
+psql -U username -d database_name
+
+Creating a Table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT NOW()
+);
+
+Inserting Data
+
+INSERT INTO users (username, email) VALUES ('john_doe', 'john@example.com');
+
+Querying Data
+
+To retrieve data from a table, you can use the SELECT statement. For example, to get all users:
+
+
+SELECT * FROM users;
+
+Updating Data
+
+You can update existing records using the UPDATE statement. For example, to change the email of a user:
+
+
+
+UPDATE users
+SET email = 'new_email@example.com'
+WHERE username = 'john_doe';
+
+Deleting Data
+
+To delete records from a table, you can use the DELETE FROM statement. For example, to delete a user:
+
+
+
+DELETE FROM users
+WHERE username = 'john_doe';
+
+Aggregation and Grouping
+
+You can perform aggregate functions and group data using the GROUP BY clause. For example, to count the number of users per email domain:
+
+
+
+SELECT SUBSTRING(email FROM POSITION('@' IN email) + 1) AS domain, COUNT(*) AS count
+FROM users
+GROUP BY domain;
+
+Indexing
+
+Indexing can improve query performance. You can create an index on a column like this:
+
+
+
+CREATE INDEX idx_username ON users(username);
+
