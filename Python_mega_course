@@ -1,0 +1,70 @@
+top 10 data structures in Python.
+1. Lists:
+   ```python
+   my_list = [1, 2, 3, 4, 5]
+   ```
+
+2. Tuples:
+   ```python
+   my_tuple = (1, 2, 3, 4, 5)
+   ```
+
+3. Sets:
+   ```python
+   my_set = {1, 2, 3, 4, 5}
+   ```
+
+4. Dictionaries:
+   ```python
+   my_dict = {"key1": "value1", "key2": "value2", "key3": "value3"}
+   ```
+
+5. Stacks (using lists):
+   ```python
+   stack = []
+   stack.append(1)
+   stack.append(2)
+   top_element = stack.pop()
+   ```
+
+6. Queues (using collections.deque):
+   ```python
+   from collections import deque
+   queue = deque()
+   queue.append(1)
+   queue.append(2)
+   front_element = queue.popleft()
+   ```
+
+7. Linked Lists (using custom classes):
+   ```python
+   class Node:
+       def __init__(self, data):
+           self.data = data
+           self.next = None
+   ```
+
+8. Heaps (using heapq):
+   ```python
+   import heapq
+   heap = [3, 1, 4, 1, 5, 9, 2, 6, 5, 3]
+   heapq.heapify(heap)
+   smallest = heapq.heappop(heap)
+   ```
+
+9. Trees (using custom classes):
+   ```python
+   class TreeNode:
+       def __init__(self, data):
+           self.data = data
+           self.left = None
+           self.right = None
+   ```
+
+10. Graphs (using custom classes or networkx library):
+    ```python
+    import networkx as nx
+    G = nx.Graph()
+    G.add_node(1)
+    G.add_edge(1, 2)
+    ```
