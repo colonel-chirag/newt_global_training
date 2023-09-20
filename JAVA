@@ -1,0 +1,94 @@
+**1. Hello World:**
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+```
+
+This is the classic "Hello, World!" program in Java.
+
+**2. Variables and Data Types:**
+
+```java
+public class VariablesExample {
+    public static void main(String[] args) {
+        int age = 30; // Integer variable
+        double salary = 50000.50; // Double variable
+        String name = "John"; // String variable
+        
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Salary: " + salary);
+    }
+}
+```
+
+This code demonstrates the use of variables and different data types (int, double, String).
+
+**3. Conditional Statements (if-else):**
+
+```java
+public class ConditionalExample {
+    public static void main(String[] args) {
+        int age = 18;
+        
+        if (age >= 18) {
+            System.out.println("You are an adult.");
+        } else {
+            System.out.println("You are a minor.");
+        }
+    }
+}
+```
+
+This code uses an `if-else` statement to check if a person is an adult or a minor based on their age.
+
+**4. Loops (for loop):**
+
+```java
+public class LoopExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++) {
+            System.out.println("Iteration " + i);
+        }
+    }
+}
+```
+
+This code demonstrates a simple `for` loop that iterates five times and prints the iteration number.
+
+**5. Arrays:**
+
+```java
+public class ArrayExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5};
+        
+        System.out.println("First element: " + numbers[0]);
+        System.out.println("Length of the array: " + numbers.length);
+    }
+}
+```
+
+This code shows how to create and access elements of an integer array.
+
+**6. Methods:**
+
+```java
+public class MethodExample {
+    public static void main(String[] args) {
+        int result = add(5, 3);
+        System.out.println("Sum: " + result);
+    }
+    
+    static int add(int a, int b) {
+        return a + b;
+    }
+}
+```
+
+This code defines a method `add` to perform addition and then calls it from the `main` method.
+
