@@ -1,0 +1,27 @@
+from pyspark import SparkContext, SparkConf
+
+# Create a SparkConf and SparkContext
+conf = SparkConf().setAppName("WordCountApp")
+sc = SparkContext(conf=conf)
+
+# Load a text file from HDFS (or your local file system)
+text_file = sc.textFile("hdfs://path/to/your/textfile.txt")
+
+# Split each line into words
+words = text_file.flatMap(lambda line: line.split(" "))
+
+# Map each word to a key-value pair (word, 1)
+word_counts = words.map(lambda word: (word, 1))
+
+# Reduce by key (word) by adding up the values (1) for each word
+word_count = word_counts.reduceByKey(lambda a, b: a + b)
+
+# Save the result to a file or print it
+word_count.saveAsTextFile("hdfs://path/to/save/result")
+# Alternatively, you can collect and print the result for small datasets
+# result = word_count.collect()
+# for (word, count) in result:
+#     print(f"{word}: {count}")
+
+# Stop the SparkContext
+sc.stop()
