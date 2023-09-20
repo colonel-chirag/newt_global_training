@@ -1,0 +1,87 @@
+Problem 1: Calculate Factorial
+
+Write a Java program to calculate the factorial of a given number n. The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.
+
+java
+
+import java.util.Scanner;
+
+public class Factorial {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = input.nextInt();
+        input.close();
+        
+        long factorial = 1;
+        for (int i = 1; i <= n; i++) {
+            factorial *= i;
+        }
+        
+        System.out.println("Factorial of " + n + " is " + factorial);
+    }
+}
+
+Problem 2: Find Prime Numbers
+
+Write a Java program to find and print all prime numbers less than or equal to a given number n.
+
+java
+
+import java.util.Scanner;
+
+public class PrimeNumbers {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = input.nextInt();
+        input.close();
+        
+        System.out.println("Prime numbers up to " + n + ":");
+        for (int i = 2; i <= n; i++) {
+            if (isPrime(i)) {
+                System.out.print(i + " ");
+            }
+        }
+    }
+    
+    static boolean isPrime(int num) {
+        if (num <= 1) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+Problem 3: Reverse a String
+
+Write a Java program to reverse a given string.
+
+java
+
+import java.util.Scanner;
+
+public class ReverseString {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        String str = input.nextLine();
+        input.close();
+        
+        String reversed = reverse(str);
+        System.out.println("Reversed string: " + reversed);
+    }
+    
+    static String reverse(String str) {
+        StringBuilder reversed = new StringBuilder();
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reversed.append(str.charAt(i));
+        }
+        return reversed.toString();
+    }
+}
